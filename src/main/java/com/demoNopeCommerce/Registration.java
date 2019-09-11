@@ -1,6 +1,7 @@
 package com.demoNopeCommerce;
 
 import com.google.common.annotations.VisibleForTesting;
+import javafx.beans.binding.SetExpression;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,8 @@ import org.testng.annotations.Test;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -165,13 +168,38 @@ public class Registration {
             //go to the shopping cart
             driver.findElement(By.linkText("Shopping cart")).click();
 
-            String expected = "FR_451_RB";
-            String actual = driver.findElement(By.xpath("//span[text()=\"FR_451_RB\"]")).getText();
-            Assert.assertEquals(expected,actual);
+            //to catch all web elements into list
+            List<WebElement> skuList=driver.findElements(By.className("sku-number"));
 
-            String expectedMessage = "PRIDE_PRJ";
-            String actualMessage = driver.findElement(By.xpath("//span[text()=\"PRIDE_PRJ\"]")).getText();
-            Assert.assertEquals(expectedMessage,actualMessage);
+            //myList contains all the web elements
+            //if you want to get all elements text into array list
+            List<String> sku_elements=new ArrayList<>();
+
+            for(int i=0; i<skuList.size(); i++){
+
+                //loading text of each element in to array all_elements_text
+
+                sku_elements.add(skuList.get(i).getText());
+
+             //to print directly
+             System.out.println(skuList.get(i).getText());
+            }
+
+            String expected1 [] = {"FR_451_RB", "PRIDE_PRJ"};
+            System.out.println("Expected SKUs:" + Arrays.toString(expected1));
+            String actual1[] = sku_elements.toArray(new String[sku_elements.size()]);
+            System.out.println("Actual SKUs:" + Arrays.toString(actual1));
+            Assert.assertEquals(expected1,actual1);
+
+
+            // Old version
+            //String expected = "FR_451_RB";
+            //String actual = driver.findElement(By.xpath("//span[text()=\"FR_451_RB\"]")).getText();
+            //Assert.assertEquals(expected,actual);
+
+            //String expectedMessage = "PRIDE_PRJ";
+            //String actualMessage = driver.findElement(By.xpath("//span[text()=\"PRIDE_PRJ\"]")).getText();
+            //Assert.assertEquals(expectedMessage,actualMessage);
     }
 
 }

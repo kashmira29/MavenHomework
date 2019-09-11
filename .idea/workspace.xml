@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf82a466-b073-4903-8508-b48a2e588fba" name="Default Changelist" comment="" />
+    <list default="true" id="bf82a466-b073-4903-8508-b48a2e588fba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demoNopeCommerce/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demoNopeCommerce/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demoNopeCommerce/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demoNopeCommerce/Registration.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +19,20 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/demoNopeCommerce/Registration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="202" column="5" lean-forward="true" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,6 +40,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -92,6 +113,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test1/Test1.iml" />
   </component>
   <component name="RecentsManager">
@@ -111,54 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Registration.userShouldBeAbleToAddItemInBasket">
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="Test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="Test" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Registration (1)">
     <configuration name="Registration (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Test" />
       <extension name="coverage">
@@ -229,17 +204,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Registration.usershouldbeabletoSelectJewelryByPrice" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Registration.userShouldbeabletoSelectJewelryByPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Group.*" />
+          <option name="PATTERN" value="com.demoNopeCommerce.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Group" />
-      <option name="MAIN_CLASS_NAME" value="Group.Registration" />
-      <option name="METHOD_NAME" value="usershouldbeabletoSelectJewelryByPrice" />
+      <option name="PACKAGE_NAME" value="com.demoNopeCommerce" />
+      <option name="MAIN_CLASS_NAME" value="com.demoNopeCommerce.Registration" />
+      <option name="METHOD_NAME" value="userShouldbeabletoSelectJewelryByPrice" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -249,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Registration.userShouldBeAbleToAddItemInBasket" />
         <item itemvalue="TestNG.Registration (1)" />
+        <item itemvalue="TestNG.Registration.userShouldbeabletoSelectJewelryByPrice" />
+        <item itemvalue="TestNG.Registration.userShouldBeAbleToAddItemInBasket" />
         <item itemvalue="TestNG.Registration.userShouldBeRegisteredSuccessfully (1)" />
         <item itemvalue="TestNG.Registration" />
-        <item itemvalue="TestNG.Registration.usershouldbeabletoSelectJewelryByPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -271,41 +246,41 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Registration - 2019.09.10 at 22h 29m 17s.xml">
-      <configuration name="Registration" configurationId="TestNG" />
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 11m 40s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Registration_userShouldBeRegisteredSuccessfully_(1) - 2019.09.10 at 22h 42m 16s.xml">
-      <configuration name="Registration.userShouldBeRegisteredSuccessfully (1)" configurationId="TestNG" />
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 24m 45s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Registration_(1) - 2019.09.10 at 22h 44m 47s.xml">
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 30m 45s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 32m 42s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 37m 42s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 41m 52s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 01h 45m 02s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.11 at 09h 39m 15s.xml">
+      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_userShouldbeabletoSelectJewelryByPrice - 2019.09.11 at 09h 40m 25s.xml">
+      <configuration name="Registration.userShouldbeabletoSelectJewelryByPrice" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_(1) - 2019.09.11 at 09h 47m 54s.xml">
       <configuration name="Registration (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_(1) - 2019.09.10 at 22h 57m 21s.xml">
-      <configuration name="Registration (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 22m 18s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 26m 35s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 27m 38s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 29m 19s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 37m 07s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_userShouldBeAbleToAddItemInBasket - 2019.09.10 at 23h 41m 39s.xml">
-      <configuration name="Registration.userShouldBeAbleToAddItemInBasket" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -351,22 +326,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demoNopeCommerce/Registration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="173" column="12" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demoNopeCommerce/Registration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="202" column="5" lean-forward="true" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
