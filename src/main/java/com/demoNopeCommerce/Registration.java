@@ -1,146 +1,162 @@
 package com.demoNopeCommerce;
-
-import com.google.common.annotations.VisibleForTesting;
-import javafx.beans.binding.SetExpression;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class Registration {
-    protected static WebDriver driver;
 
-    public static String randomDate() {
-        DateFormat format = new SimpleDateFormat("ddMMyyHHmmss");
-        return format.format(new Date());
+public class Registration extends Utils {
 
-    }
+    Loadprop loadprop = new Loadprop();
 
     //before method to open the browser
     @BeforeMethod
+
     public void openBrowser() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\Resources\\Browserdrive\\chromedriver.exe");
         //open the browser
         driver = new ChromeDriver();
         //maximise the window browser screen
-        driver.manage().window().fullscreen();
-        //set implicity wait for driver object
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        maximisescreen();
+        implicitwait();
         //open the website
-        driver.get("https://demo.nopcommerce.com/");
-
+        openWeb(loadprop.getProperty("url"));
     }
 
     @AfterMethod
-    public void closeBrowser() {
-        driver.quit();
+    public void closeBrowser()
+    {
+       quit();
+
     }
 
     @Test(priority = 0)
-    public void userShouldBeRegisteredSuccessfully() {
-
+    public void userShouldBeRegisteredSuccessfully()
+    {
         //click on register button
-        driver.findElement(By.xpath("//a[@class='ico-register']")).click();
+        clickButton(By.xpath("//a[@class='ico-register']"));
         //enter first name
-        driver.findElement(By.id("FirstName")).sendKeys("venus");
+        enterText(By.id("FirstName"),loadprop.getProperty("FirstName"));
         //enter last name
-        driver.findElement(By.id("LastName")).sendKeys("patel");
+        enterText(By.id("LastName"),loadprop.getProperty("LastName"));
+        //enter date of birth
+        SelectIndex(By.name("DateOfBirthDay"),5);
+        //enter the month
+        SelectValue(By.xpath("//select[@name=\"DateOfBirthMonth\"]"),loadprop.getProperty("DateOfBirthMonth"));
+        //enter the year
+        SelectVisibleText(By.name("DateOfBirthYear"),loadprop.getProperty("DateOfBirthYear"));
         //enter email
-        driver.findElement(By.name("Email")).sendKeys("krp" + randomDate() + "@bmail.com");
+        enterText(By.name("Email"),loadprop.getProperty("FirstName"));
+        enterText(By.name("Email"),randomDate());
+        enterText(By.name("Email"),loadprop.getProperty("Email"));
         //enter password
-        driver.findElement(By.id("Password")).sendKeys("test123");
+        enterText(By.id("Password"),loadprop.getProperty("Password"));
         //re-enter same password to confirm
-        driver.findElement(By.id("ConfirmPassword")).sendKeys("test123");
-        //click on register
-        driver.findElement(By.name("register-button")).click(); //assert
-        String expectedMessage = "Your registration completed";
-        String actualMessage = driver.findElement(By.xpath("//div[@class='result']")).getText();
+        enterText(By.id("ConfirmPassword"),loadprop.getProperty("ConfirmPassword"));
+        //submit the form
+        submit(By.name("register-button"));
+        //expected result
+        String expectedMessage = loadprop.getProperty("expectedMessageRegistraion");
+        //actual message
+        String actualMessage = getText(By.xpath("//div[@class='result']"));
+        //assert method
         Assert.assertEquals(actualMessage, expectedMessage);
 
     }
 
+
+
     @Test(priority = 1)
     public void userShouldBeAbleToSendReferedaLinkToFriend() {
         //click on register button
-        driver.findElement(By.xpath("//a[@class='ico-register']")).click();
+        clickButton(By.xpath("//a[@class='ico-register']"));
         //enter first name
-        driver.findElement(By.id("FirstName")).sendKeys("venus");
+        enterText(By.id("FirstName"),loadprop.getProperty("FirstName"));
         //enter last name
-        driver.findElement(By.id("LastName")).sendKeys("patel");
+        enterText(By.id("LastName"),loadprop.getProperty("LastName"));
+        //enter date of birth
+        //SelectValue(By.name("DateOfBirthDay"),loadprop.getProperty("DateOfBirthDay"));
+        SelectIndex(By.name("DateOfBirthDay"),5);
+        //enter the month
+        SelectValue(By.xpath("//select[@name=\"DateOfBirthMonth\"]"),loadprop.getProperty("DateOfBirthMonth"));
+        //enter the year
+        SelectVisibleText(By.name("DateOfBirthYear"),loadprop.getProperty("DateOfBirthYear"));
         //enter email
-        driver.findElement(By.name("Email")).sendKeys("krp" + randomDate() + "@bmail.com");
+        //driver.findElement(By.name("Email")).sendKeys("krp" + randomDate() + "@bmail.com");
+        enterText(By.name("Email"),loadprop.getProperty("FirstName"));
+        enterText(By.name("Email"),randomDate());
+        enterText(By.name("Email"),loadprop.getProperty("Email"));
         //enter password
-        driver.findElement(By.id("Password")).sendKeys("test123");
+        enterText(By.id("Password"),loadprop.getProperty("Password"));
         //re-enter same password to confirm
-        driver.findElement(By.id("ConfirmPassword")).sendKeys("test123");
-        //click on register
-        driver.findElement(By.name("register-button")).click();
+        enterText(By.id("ConfirmPassword"),loadprop.getProperty("ConfirmPassword"));
+        //submit the form
+        submit(By.name("register-button"));
         //continue to site
-        driver.findElement(By.name("register-continue")).click();
+        clickButton(By.name("register-continue"));
         //click on category Computers
-        driver.findElement(By.xpath("//ul[@class=\"top-menu notmobile\"]//a[@href=\"/computers\"]")).click();
+        clickButton(By.xpath("//ul[@class=\"top-menu notmobile\"]//a[@href=\"/computers\"]"));
         //select notebooks
-        //driver.findElement(By.xpath("//h2/a[@href=\"/notebooks\"]")).click();
-        driver.findElement(By.linkText("Notebooks")).click();
+        clickButton(By.xpath("//h2/a[@href=\"/notebooks\"]"));
         //click on Apple pro 13inch
-        driver.findElement(By.xpath("//h2/a[@href=\"/apple-macbook-pro-13-inch\"]")).click();
+        clickButton(By.xpath("//h2/a[@href=\"/apple-macbook-pro-13-inch\"]"));
         //email to friend
-        driver.findElement(By.className("email-a-friend")).click();
+        clickButton(By.className("email-a-friend"));
         //enter friend's email
-        driver.findElement(By.className("friend-email")).sendKeys("abcxyz@gmail.com");
+        enterText(By.className("friend-email"),loadprop.getProperty("friend-email"));
         //enter personal message
-        driver.findElement(By.id("PersonalMessage")).sendKeys("This is test");
+        enterText(By.id("PersonalMessage"),loadprop.getProperty("PersonalMessage"));
         //click on submit
-        driver.findElement(By.name("send-email")).click();
-        String expectedMessage = "Your message has been sent.";
-        String actualMessage = driver.findElement(By.className("result")).getText();
+        clickButton(By.name("send-email"));
+        String expectedMessage = loadprop.getProperty("expectedMessagerefferedLink");
+        String actualMessage = getText(By.className("result"));
 
         Assert.assertEquals(expectedMessage, actualMessage);
+
     }
 
     @Test(priority = 2)
     public void userShouldBeNavigateToCameraAndPhotopage() {
+
         //go to electronic category
-        driver.findElement(By.linkText("Electronics")).click();
+        clickButton(By.linkText("Electronics"));
         //click on camera &photo
-        driver.findElement(By.linkText("Camera & photo")).click();
+        //driver.findElement(By.linkText("Camera & photo")).click();
+        clickButton(By.linkText("Camera & photo"));
         //compare the result
-        String expectedMessage = "Camera & photo";
-        String actualMessage = driver.findElement(By.tagName("h1")).getText();
+        String expectedMessage = loadprop.getProperty("expectedMessageCmaeraPhoto");
+        //String actualMessage = driver.findElement(By.tagName("h1")).getText();
+        String actualMessage = getText(By.tagName("h1"));
 
         Assert.assertEquals(expectedMessage, actualMessage);
+
+
     }
     @Test(priority =3)
     public  void userShouldbeabletoSelectJewelryByPrice() {
         //go to Jewelry category
-        driver.findElement(By.linkText("Jewelry")).click();
+        clickButton(By.linkText("Jewelry"));
         //select price$700-&3000
-        driver.findElement(By.xpath("//a[@href=\"//demo.nopcommerce.com/jewelry?price=700-3000\"]")).click();
+        clickButton(By.xpath("//a[@href=\"//demo.nopcommerce.com/jewelry?price=700-3000\"]"));
         //find min range
-        String minrange = driver.findElement(By.xpath("//span[@class=\"PriceRange\"][1]")).getText();
+        String minrange  = getText(By.xpath("//span[@class=\"PriceRange\"][1]"));
         //replace $ using string  replace() method
         String minrange1 = String.valueOf(minrange.replace("$", ""));
         //convert double to int
         double minrange2 = Double.valueOf(minrange1);
         //find max range
-        String maxrange = driver.findElement(By.xpath("//span[@class=\"PriceRange\"][2]")).getText();
+        String maxrange = getText(By.xpath("//span[@class=\"PriceRange\"][2]"));
         String maxrange1 = String.valueOf(maxrange.replace("$", ""));
         String maxrange2 = String.valueOf(maxrange1.replace(",", ""));
         double maxrange3 = Double.valueOf(maxrange2);
         //Expected result value
-        String myvalue = driver.findElement(By.xpath("//span[@class=\"price actual-price\"]")).getText();
+        String myvalue = getText(By.xpath("//span[@class=\"price actual-price\"]"));
         String myvalue1 = String.valueOf(myvalue.replace("$", ""));
         String myvalue2 = String.valueOf(myvalue1.replace(",", ""));
         double myvalue3 = Double.valueOf(myvalue2);
@@ -152,24 +168,25 @@ public class Registration {
          @Test(priority = 4)
          public void userShouldBeAbleToAddItemInBasket(){
             //Click on book category
-            driver.findElement(By.linkText("Books")).click();
+             clickButton(By.linkText("Books"));
             //click on book Fahrenheit 451 by Ray Bradbury
-            driver.findElement(By.linkText("Fahrenheit 451 by Ray Bradbury")).click();
+             clickButton(By.linkText("Fahrenheit 451 by Ray Bradbury"));
             //add the item in to cart
-            driver.findElement(By.id("add-to-cart-button-37")).click();
+             clickButton(By.id("add-to-cart-button-37"));
             //click on close
-            driver.findElement(By.className("close")).click();
-            driver.navigate().back();
+             clickButton(By.className("close"));
+            //driver.navigate().back();
+             navigateBack();
             //select the book Pride and Prejudice
-            driver.findElement(By.linkText("Pride and Prejudice")).click();
+             clickButton(By.linkText("Pride and Prejudice"));
             //add to cart the item
-            driver.findElement(By.id("add-to-cart-button-39")).click();
-            driver.findElement(By.className("close")).click();
+             clickButton(By.id("add-to-cart-button-39"));
+             clickButton(By.className("close"));
             //go to the shopping cart
-            driver.findElement(By.linkText("Shopping cart")).click();
+             clickButton(By.linkText("Shopping cart"));
 
-            //to catch all web elements into list
-            List<WebElement> skuList=driver.findElements(By.className("sku-number"));
+             //to catch all web elements into list
+            List<WebElement> skuList= getskuList(By.className("sku-number"));
 
             //myList contains all the web elements
             //if you want to get all elements text into array list
@@ -190,18 +207,10 @@ public class Registration {
             String actual1[] = sku_elements.toArray(new String[sku_elements.size()]);
             System.out.println("Actual SKUs:" + Arrays.toString(actual1));
             Assert.assertEquals(expected1,actual1);
-
-
-            // Old version
-            //String expected = "FR_451_RB";
-            //String actual = driver.findElement(By.xpath("//span[text()=\"FR_451_RB\"]")).getText();
-            //Assert.assertEquals(expected,actual);
-
-            //String expectedMessage = "PRIDE_PRJ";
-            //String actualMessage = driver.findElement(By.xpath("//span[text()=\"PRIDE_PRJ\"]")).getText();
-            //Assert.assertEquals(expectedMessage,actualMessage);
     }
-
 }
+
+
+
 
 
